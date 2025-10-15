@@ -1,15 +1,15 @@
 # Industrial-Digital-Twin — PHATE + PGAN
 
-Genération de jumeaux numériques pour une unité industrielle basé sur des méthodes génératives. Le pipeline PHATE -> PGAN (PHATE GAN), basée sur le papier de recherche [A virtual sample generation method based on manifold learning and a generative adversarial network for soft sensor models with limited data](https://www.sciencedirect.com/science/article/abs/pii/S1876107023004467) densifie les zones sparses des données de procédé, puis un modèle aval (ex. MLP) est entraîné pour des tâches de prédiction ou de génération.
+Genération de jumeaux numériques pour une unité industrielle basé sur des méthodes génératives. La pipeline, basée sur le papier de recherche [A virtual sample generation method based on manifold learning and a generative adversarial network for soft sensor models with limited data](https://www.sciencedirect.com/science/article/abs/pii/S1876107023004467), permet de générer des données dans des zones sparses, puis un modèle aval (ex. MLP) est entraîné pour des tâches de prédiction ou de génération. La data augmentation en zone sparse est l'un des objectifs principaux de mon implémentation.
 
 ## Contexte
-- Unité ciblée : DHC (raffinerie) avec fours, réacteurs, colonnes de distillation, etc...
-- Objectif : créer des jumeaux numériques d’équipements/procédés pour générer des données virtuelles réalistes, notamment dans les régions de données sparses.
+- Unité ciblée : Unité de raffinerie contenant des fours, des réacteurs, des colonnes de distillation, etc...
+- Objectif : créer des jumeaux numériques d’équipements pour générer des données virtuelles réalistes, notamment dans les régions de données sparses.
 
 ## Méthode et pipeline
 Idée générale
-1) PHATE extrait des représentations de dimension réduite qui respectent la structure/voisinage.
-2) PGAN (PHATE GAN) est entraîné dans cet espace pour échantillonner de nouvelles observations, en particulier dans les zones sparse.
+1) [PHATE](https://phate.readthedocs.io/en/stable/) : Méthode de réduction de dimensions permettant de préserver à la fois les informations locales et globales de la donnée.
+2) PGAN (PHATE GAN) est entraîné dans cet espace pour échantillonner de nouvelles observations, en particulier dans les zones sparses.
 3) Les données virtuelles enrichies servent à entraîner un modèle aval (ex. MLP) pour prédiction d’échantillons ou de valeurs.
 
 Schéma du pipeline  
