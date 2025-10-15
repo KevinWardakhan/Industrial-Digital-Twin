@@ -1,6 +1,6 @@
 # Industrial-Digital-Twin — PHATE + PGAN
 
-Jumeau numérique pour unité industrielle (DHC) basé sur des méthodes génératives. Le pipeline PHATE -> PGAN (PHATE GAN) densifie les zones sparses des données de procédé, puis un modèle aval (ex. MLP) est entraîné pour des tâches de prédiction ou de génération.
+Genération de jumeaux numériques pour une unité industrielle basé sur des méthodes génératives. Le pipeline PHATE -> PGAN (PHATE GAN), basée sur le papier de recherche [A virtual sample generation method based on manifold learning and a generative adversarial network for soft sensor models with limited data](https://www.sciencedirect.com/science/article/abs/pii/S1876107023004467) densifie les zones sparses des données de procédé, puis un modèle aval (ex. MLP) est entraîné pour des tâches de prédiction ou de génération.
 
 ## Contexte
 - Unité ciblée : DHC (raffinerie) avec fours, réacteurs, colonnes de distillation, etc...
@@ -23,16 +23,19 @@ Schéma du pipeline
 - Scripts pour entraînement, génération et analyse.
 
 ## Structure du dépôt
-src/digital_twin/
-  - digital_twin_carboptim.py      (orchestration PHATE + PGAN)
-  - simple_digital_twin.py         (analyse/génération par équipement)
-  - equipment_features.py          (gestion des features et config)
-  - load_and_save_models.py        (I/O modèles et mappings)
-  - carboptim_test.py              (démo/tests internes)
-  - __init__.py
+
+```text
+src/
+└─ digital_twin/
+   ├─ digital_twin_carboptim.py   # orchestration PHATE + PGAN
+   ├─ simple_digital_twin.py      # analyse/génération par équipement
+   ├─ equipment_features.py       # gestion des features et config
+   ├─ load_and_save_models.py     # I/O modèles et mappings
+   ├─ carboptim_test.py           # démo/tests internes
+   └─ __init__.py
 scripts/
-  - quickstart.py                  (exemple d’exécution)
+└─ quickstart.py                  # exemple d'exécution
 docs/
-  - pipeline_phate_pgan.png        (schéma du pipeline)
+└─ pipeline_phate_pgan.png        # schéma du pipeline
 
 
