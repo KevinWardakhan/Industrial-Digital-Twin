@@ -36,6 +36,6 @@ src/
 scripts/
 └─ quickstart.py                  # exemple d'exécution
 docs/
-└─ pipeline_phate_pgan.png        # schéma du pipeline
+└─ pipeline_phate_pgan.jpg        # schéma du pipeline
 
 
