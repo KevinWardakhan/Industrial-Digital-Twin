@@ -1,1 +1,0 @@
-# Changelog\n\n- 0.1.0 — Initial public scaffold (code, docs, CI).\n
