@@ -1,15 +1,10 @@
 # Industrial-Digital-Twin — PHATE + PGAN
 
-TL;DR
-Jumeau numérique pour unité industrielle (DHC) basé sur des méthodes génératives. Le pipeline PHATE -> PGAN (PHATE GAN) densifie les zones clairsemées des données de procédé, puis un modèle aval (ex. MLP) est entraîné pour des tâches de prédiction ou de génération.
-
-Avertissement confidentialité / IP
-- Ne pas versionner de données réelles, ni de fichiers de configuration sensibles, ni de modèles entraînés (*.pth, *.pkl) sans autorisation.
-- Ce dépôt montre le code et le pipeline réalisés pendant le stage. Utiliser des chemins d’exemple et des données synthétiques.
+Jumeau numérique pour unité industrielle (DHC) basé sur des méthodes génératives. Le pipeline PHATE -> PGAN (PHATE GAN) densifie les zones sparses des données de procédé, puis un modèle aval (ex. MLP) est entraîné pour des tâches de prédiction ou de génération.
 
 ## Contexte
-- Unité ciblée : DHC (raffinerie) avec fours, réacteurs, colonnes de distillation.
-- Objectif : créer des jumeaux numériques d’équipements/procédés pour générer des données virtuelles réalistes, notamment dans les régions de données peu denses.
+- Unité ciblée : DHC (raffinerie) avec fours, réacteurs, colonnes de distillation, etc...
+- Objectif : créer des jumeaux numériques d’équipements/procédés pour générer des données virtuelles réalistes, notamment dans les régions de données sparses.
 
 ## Méthode et pipeline
 Idée générale
@@ -17,13 +12,12 @@ Idée générale
 2) PGAN (PHATE GAN) est entraîné dans cet espace pour échantillonner de nouvelles observations, en particulier dans les zones sparse.
 3) Les données virtuelles enrichies servent à entraîner un modèle aval (ex. MLP) pour prédiction d’échantillons ou de valeurs.
 
-Schéma du pipeline
-(placer l’image dans docs/pipeline_phate_pgan.png puis laisser le lien ci-dessous)
-![PHATE + PGAN pipeline](docs/pipeline_phate_pgan.jpeg)
+Schéma du pipeline  
+[PHATE + PGAN pipeline](docs/pipeline_phate_pgan.jpeg)
 
 ## Fonctionnalités
 - Extraction de features via PHATE.
-- Génération de données virtuelles avec PGAN (PHATE GAN) ciblant les zones clairsemées.
+- Génération de données virtuelles avec PGAN (PHATE GAN) ciblant les zones sparses.
 - Orchestration par équipement (sélection, mapping de features).
 - Sauvegarde et chargement des modèles et des mappings.
 - Scripts pour entraînement, génération et analyse.
