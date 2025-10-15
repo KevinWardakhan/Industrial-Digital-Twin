@@ -13,7 +13,7 @@ Idée générale
 3) Les données virtuelles enrichies servent à entraîner un modèle aval (ex. MLP) pour prédiction d’échantillons ou de valeurs.
 
 Schéma du pipeline  
-[PHATE + PGAN pipeline](docs/pipeline_phate_pgan.jpeg)
+[PHATE + PGAN pipeline](docs/pipeline_phate_pgan.jpg)
 
 ## Fonctionnalités
 - Extraction de features via PHATE.
