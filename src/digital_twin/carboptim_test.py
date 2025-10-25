@@ -36,7 +36,7 @@ import ast
 import warnings
 from scipy.stats import ks_2samp, ttest_ind
 
-# Configure computing device (MPS for Apple Silicon, CPU otherwise)
+# Configure computing device 
 device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 warnings.filterwarnings("ignore")
 
