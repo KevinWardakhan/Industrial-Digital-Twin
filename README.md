@@ -12,7 +12,7 @@ Idée générale
 2) PGAN (PHATE GAN) est entraîné dans cet espace pour échantillonner de nouvelles observations, en particulier dans les zones sparses.
 3) Les données virtuelles enrichies servent à entraîner un modèle aval (ex. MLP) pour prédiction d’échantillons ou de valeurs.
 
-Schéma du pipeline  
+Pipeline  
 [PHATE + PGAN pipeline](docs/pipeline_phate_pgan.jpg)
 
 ## Fonctionnalités
